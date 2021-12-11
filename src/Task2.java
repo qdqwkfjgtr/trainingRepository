@@ -1,13 +1,41 @@
 public class Task2 {
     public static void main(String[] args) {
-        String str="MCMXCIV";
+        String str="III";
         int answer=romanToInt(str);
         System.out.println(answer);
     }
 
 public static int romanToInt (String s){
         int result=0;
-        for(int i=1;i<s.length();i++){
+        for(int i=1;i<=s.length();i++){
+            if(i==s.length()&&(s.charAt(i-1))=='I') {
+                result += 1;
+                break;
+            }
+            if(i==s.length()&&(s.charAt(i-1))=='V') {
+                result += 5;
+                break;
+            }
+            if(i==s.length()&&(s.charAt(i-1))=='X') {
+                result += 10;
+                break;
+            }
+            if(i==s.length()&&(s.charAt(i-1))=='L') {
+                result += 50;
+                break;
+            }
+            if(i==s.length()&&(s.charAt(i-1))=='C') {
+                result += 100;
+                break;
+            }
+            if(i==s.length()&&(s.charAt(i-1))=='D') {
+                result += 500;
+                break;
+            }
+            if(i==s.length()&&(s.charAt(i-1))=='M') {
+                result += 1000;
+                break;
+            }
             if((s.charAt(i-1))=='I'&&(s.charAt(i)=='V')) {
                 result += 4;
                 i++;
@@ -52,20 +80,7 @@ public static int romanToInt (String s){
                 result+=500;
             if((s.charAt(i-1))=='M')
                 result+=1000;
-            if(i==s.length()-1&&(s.charAt(i))=='I')
-                result+=1;
-            if(i==s.length()-1&&(s.charAt(i))=='V')
-                result+=5;
-            if(i==s.length()-1&&(s.charAt(i))=='X')
-                result+=10;
-            if(i==s.length()-1&&(s.charAt(i))=='L')
-                result+=50;
-            if(i==s.length()-1&&(s.charAt(i))=='C')
-                result+=100;
-            if(i==s.length()-1&&(s.charAt(i))=='D')
-                result+=500;
-            if(i==s.length()-1&&(s.charAt(i))=='M')
-                result+=1000;
+
         }
 
         return result;
