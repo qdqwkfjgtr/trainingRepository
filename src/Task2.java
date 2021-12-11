@@ -1,6 +1,6 @@
 public class Task2 {
     public static void main(String[] args) {
-        String str="MLIII";
+        String str="MCMXCIV";
         int answer=romanToInt(str);
         System.out.println(answer);
     }
@@ -10,37 +10,43 @@ public static int romanToInt (String s){
         for(int i=1;i<s.length();i++){
             if((s.charAt(i-1))=='I'&&(s.charAt(i)=='V')) {
                 result += 4;
+                i++;
                 continue;
             }
             if((s.charAt(i-1))=='I'&&(s.charAt(i)=='X')) {
                 result += 9;
+                i++;
                 continue;
             }
             if((s.charAt(i-1))=='X'&&(s.charAt(i)=='L')) {
                 result += 40;
+                i++;
                 continue;
             }
             if((s.charAt(i-1))=='X'&&(s.charAt(i)=='C')) {
                 result += 90;
+                i++;
                 continue;
             }
             if((s.charAt(i-1))=='C'&&(s.charAt(i)=='D')) {
                 result += 400;
+                i++;
                 continue;
             }
             if((s.charAt(i-1))=='C'&&(s.charAt(i)=='M')) {
                 result += 900;
+                i++;
                 continue;
             }
-            if ((s.charAt(i-1))=='I')
+            if ((s.charAt(i-1))=='I'&&((s.charAt(i)!='X')||(s.charAt(i)!='V')))
                 result+=1;
             if((s.charAt(i-1))=='V')
                 result+=5;
-            if((s.charAt(i-1))=='X')
+            if((s.charAt(i-1))=='X'&&((s.charAt(i)!='L')||(s.charAt(i)!='C')))
                 result+=10;
             if((s.charAt(i-1))=='L')
                 result+=50;
-            if((s.charAt(i-1))=='C')
+            if((s.charAt(i-1))=='C'&&((s.charAt(i)!='D')||s.charAt(i)!='M'))
                 result+=100;
             if((s.charAt(i-1))=='D')
                 result+=500;
