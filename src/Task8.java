@@ -19,7 +19,6 @@ public class Task8 {
         int[] sorted1 = new int[m];
         int[] sorted2 = new int[n];
         int[] result = new int[n + m];
-        int x=0;
         for (int i = 0; i < m; i++) {
             sorted1[i] = nums1[i];
         }
@@ -29,9 +28,9 @@ public class Task8 {
         for (int i = 0; i < n ; i++) {
             result[i] = sorted1[i];
         }
-            for (int i = m; i < m+n ; i++) {
+            for (int i = m,x=0; i < m+n ; i++,x++) {
                 result[i] = sorted2[x];
-                x++;
+
             }
             Arrays.sort(result);
 
